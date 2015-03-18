@@ -15,7 +15,9 @@ public class Token extends ActionSupport implements  SessionAware,ModelDriven<To
 	
 	
 	
-	
+	public static void main(String[]arg){
+		System.out.println("hi geeta ");
+	}
 	
 	
 	
