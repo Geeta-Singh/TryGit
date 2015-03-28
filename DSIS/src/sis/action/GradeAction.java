@@ -5,9 +5,15 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
 import java.io.FileNotFoundException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.*;
 
 import org.apache.struts2.interceptor.SessionAware;
+
+
+
 
 
 
@@ -32,6 +38,7 @@ public class GradeAction extends ActionSupport implements  SessionAware,ModelDri
 	public GradeModel gm=new GradeModel();
 	public ArrayList<GradeModel> name=new ArrayList<GradeModel>(); 
 	public StudentModel student=new StudentModel();
+	public ArrayList<String> cname=new ArrayList<String>(); 
 	public String execute() throws FileNotFoundException{
 
 	DBhandler retrive = new DBhandler();
@@ -46,7 +53,11 @@ public class GradeAction extends ActionSupport implements  SessionAware,ModelDri
 		return "grade";
 	}
 
-
+public String ajax(){
+	DBhandler retrive = new DBhandler();
+	cname=retrive.Ajax(gm.getSelect());
+	return "success";
+}
 	public Map<String, Object> getSession() {
 		return session;
 	}

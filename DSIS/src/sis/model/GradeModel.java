@@ -5,6 +5,13 @@ import java.util.ArrayList;
 
 public class GradeModel 
 {
+	public String select;
+	public String getSelect() {
+		return select;
+	}
+	public void setSelect(String select) {
+		this.select = select;
+	}
 	private String semester;
 	private int sel1;
 	private String Subject_id;

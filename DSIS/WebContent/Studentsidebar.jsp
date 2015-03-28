@@ -1,4 +1,5 @@
    <!-- Sidebar -->
+    <%@include file="/ajaximp.jsp" %>
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
@@ -52,6 +53,14 @@
                 <li>
                     <a href="logout">Logout</a>
                 </li>
+                
+                 <li class="dropdown">
+                 
+          <a href="drop1.jsp"  onclick="loadattendancesheet()">Ajax_Example
+         
+          </a>
+          
+      	</li> 
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->

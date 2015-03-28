@@ -17,6 +17,34 @@ public class DBhandler{
 	 ArrayList<String> interestAll=new ArrayList<String>();
 	GradeModel lm=new GradeModel();
 	
+	public  ArrayList<String> Ajax(String select){
+		ArrayList<String> cname = new ArrayList<String>();
+		try
+		{
+			int i=0; 
+			DBconnection db=new DBconnection();
+			System.out.println("connection");
+			Connection con= db.createConnection();
+			PreparedStatement ps = con.prepareStatement("select SUBJECT_ID from SUBJECT where SEMESTER=?");
+			ps.setString(1,select);
+			ResultSet rs = ps.executeQuery();
+			
+			//System.out.println("rs is\n"+rs);
+			while(rs.next())
+			{
+				cname.add(rs.getString("SUBJECT_ID"));
+			    i++;
+			}
+		}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+
+			return cname;
+	
+	}
+	
 	//admin handler
 	public  ArrayList<NewsModel> searchNews ()
     {
@@ -1769,6 +1797,8 @@ DBconnection db=new DBconnection ();
 	}
 	
 }
+
+
 
 }
 
